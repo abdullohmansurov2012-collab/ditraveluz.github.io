@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>Di travel</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  /* 🔥 iPhone-stil preloader */
+  #preloader {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: #0f2027;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index: 9999;
+    flex-direction: column;
+  }
+
+  .loader {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: conic-gradient(#00c6ff 0%, #0072ff 50%, #00c6ff 100%);
+    animation: spin 1s linear infinite;
+    box-shadow: 0 0 25px #00c6ff, 0 0 50px #0072ff, 0 0 75px #00c6ff;
+  }
+
+  .loader-text {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #00ffcc;
+    text-shadow: 0 0 6px #00ffcc;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+  }
+
+  /* 🔥 Sayt tarkibi */
+  .content {
+    display: none; /* dastlab yashirin */
+  }
+
+  header {
+    padding: 30px;
+    font-size: 32px;
+    font-weight: bold;
+    background: rgba(0,0,0,0.4);
+    animation: fadeDown 1.5s ease;
+  }
+
+  h1 {
+    margin-top: 60px;
+    font-size: 42px;
+    animation: fadeIn 2s ease;
+  }
+
+  p {
+    font-size: 20px;
+    margin: 20px 0;
+    animation: fadeIn 3s ease;
+  }
+
+  button {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    margin-top: 20px;
+    font-size: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: glow 2s infinite alternate;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #00c6ff;
+  }
+
+  #javob {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #00ffcc;
+    animation: fadeIn 2s ease;
+  }
+
+  footer {
+    margin-top: 60px;
+    padding: 15px;
+    background: rgba(0,0,0,0.4);
+    font-size: 14px;
+    animation: fadeUp 2s ease;
+  }
+
+  /* 🔥 Animatsiyalar */
+  @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+  @keyframes fadeDown { from {opacity: 0; transform: translateY(-30px);} to {opacity: 1; transform: translateY(0);} }
+  @keyframes fadeUp { from {opacity: 0; transform: translateY(30px);} to {opacity: 1; transform: translateY(0);} }
+  @keyframes glow { from {box-shadow: 0 0 10px #0072ff;} to {box-shadow: 0 0 25px #00c6ff;} }
+</style>
+</head>
+<body>
+
+  <!-- iPhone uslubidagi preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+    <div class="loader-text"> Yuklanmoqda...</div>
+  </div>
+
+  <!-- Sayt tarkibi -->
+  <div class="content">
+    <header>✨ Di travel ✨</header>
+    <h1>Assalomu alaykum, "Di travel"ga xush kelibsiz!</h1>
+    <p>Saytga kirish uchun tugmani bosing!</p>
+    <button onclick="salom()">Saytimizga o'tish🚀</button>
+    <p id="javob"></p>
+    <footer>© 2025 Di travel — Hamma huquqlar himoyalangan</footer>
+  </div>
+
+  <script>
+    // Saytni 3 soniya yuklash
+    window.addEventListener('load', function(){
+      setTimeout(function(){
+        document.getElementById('preloader').style.display = 'none';
+        document.querySelector('.content').style.display = 'block';
+      }, 3000); // 3 soniya
+    });
+
+    // Tugma funksiyasi
+    function salom() {
+      document.getElementById("javob").innerHTML = "Saytimizga o'tilmoqda...";
+      setTimeout(function() {
+        window.location.href = "https://sites.google.com/view/ditravel2";
+      }, 1500);
+    }
+  </script>
+
+</body>
+</html>
